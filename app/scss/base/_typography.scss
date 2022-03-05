@@ -1,0 +1,48 @@
+@use "utils" as *;
+
+:root {
+  --font-public-sans: "Public Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-public-sans);
+  font-size: rem(18);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-weight: 400;
+  color: $col-blue-dark;
+}
+
+h1 {
+  font-size: rem(40);
+
+  @include bp("large") {
+    font-size: rem(52);
+  }
+}
+
+h2 {
+  font-size: rem(36);
+
+  @include bp("large") {
+    font-size: rem(46);
+  }
+}
+
+h3 {
+  font-size: rem(24);
+}
+
+p {
+  color: $col-blue-grayish;
+  line-height: 1.5 !important;
+  font-size: rem(16);
+
+  @include bp("large") {
+    font-size: rem(18);
+  }
+}

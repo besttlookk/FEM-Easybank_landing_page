@@ -1,0 +1,78 @@
+@use "utils" as *;
+
+.footer {
+  position: relative;
+  background-color: $col-blue-dark;
+  color: $col-blue-grayish-light;
+
+  &__wrapper {
+    @include flex($direction: column, $gap: $gap-large);
+    @include wrapper;
+    padding: rem(36) 0;
+
+    @include bp("large") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item1 {
+    @include flex($direction: column, $gap: $gap-large);
+
+    @include bp("large") {
+      gap: rem(48);
+    }
+
+    img {
+      height: rem(26);
+
+      @include bp("large") {
+        height: rem(24);
+      }
+    }
+  }
+
+  &__socialIcons {
+    @include flex($gap: $gap-medium);
+
+    img {
+      height: rem(28);
+
+      @include bp("large") {
+        height: rem(22);
+      }
+    }
+  }
+
+  &__item2 {
+    @include flex($direction: column, $gap: $gap-medium);
+
+    @include bp("large") {
+      width: 25%;
+      height: rem(140);
+      flex-wrap: wrap;
+      align-items: start;
+      gap: $gap-large;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__item3 {
+    @include flex($direction: column, $gap: $gap-large);
+  }
+
+  &__credit {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: rem(12);
+
+    a {
+      color: $col-blue-cyan;
+    }
+  }
+}

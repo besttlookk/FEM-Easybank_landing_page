@@ -1,0 +1,65 @@
+@use "utils" as *;
+
+.hamburger {
+  width: rem(24);
+  height: rem(22);
+  cursor: pointer;
+  @include flex;
+
+  span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: rem(2);
+    background-color: $col-blue-dark;
+    transition: background-color 0s 0.2s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: $col-blue-dark;
+      transition: margin 0.2s 0.2s, transform 0.2s 0s;
+      transform-origin: center;
+    }
+
+    &::after {
+      margin-top: 6px;
+    }
+
+    &::before {
+      margin-top: -6px;
+    }
+  }
+
+  @include bp("large") {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.active span {
+    background-color: transparent;
+    transition-delay: 0.2s;
+  }
+
+  &.active span::after,
+  &.active span::before {
+    transform-origin: center;
+    margin-top: 0;
+    background-color: $col-blue-grayish;
+    transition: margin 0.2s 0s, transform 0.2s 0.2s;
+  }
+
+  &.active span::after {
+    transform: rotate(45deg);
+  }
+
+  &.active span::before {
+    transform: rotate(-45deg);
+  }
+}

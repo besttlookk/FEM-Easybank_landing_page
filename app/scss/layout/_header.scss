@@ -1,0 +1,62 @@
+@use "utils" as *;
+
+.header {
+  background-color: $col-white;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+  &__wrapper {
+    @include flex($justify-content: space-between);
+    padding: rem(25);
+    max-width: rem(1600);
+    margin: 0 auto;
+
+    @include bp("large") {
+      padding: 0 rem(25);
+    }
+  }
+
+  &__navlist {
+    display: flex;
+    flex-direction: column;
+
+    @include bp("large") {
+      flex-direction: row;
+      gap: $gap;
+    }
+
+    a {
+      color: $col-blue-grayish;
+      transition: all 0.2s ease-in-out;
+      font-size: rem(14);
+
+      &:hover,
+      &.active {
+        color: $col-blue-dark;
+      }
+
+      @include bp("large") {
+        display: inline-block;
+        padding: rem(24) 0;
+        font-size: rem(16);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: rem(5);
+          background: $gradient;
+          opacity: 0;
+        }
+
+        &:hover::after,
+        &.active::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

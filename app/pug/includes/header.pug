@@ -1,0 +1,14 @@
+header.header 
+  include overlay
+  .header__wrapper
+    a.header__logo(href="/") 
+      img(src="./images/logo.svg" alt="logo")
+
+    nav.hide-for-mobile
+      ul.header__navlist
+        include navList
+    span.hide-for-mobile
+      include ctaBtn 
+
+    .hamburger#hamburger
+      span

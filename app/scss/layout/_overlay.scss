@@ -1,0 +1,76 @@
+@use "utils" as *;
+
+.overlay {
+  position: fixed;
+  top: rem(70);
+  bottom: 0;
+  left: -100%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.1s ease 0.3s;
+  opacity: 0;
+  background: $gradient-overlay;
+  z-index: 1000;
+
+  &.active {
+    left: 0;
+    opacity: 1;
+
+    transition: all 0.3s ease;
+  }
+
+  &.active nav {
+    transition: top 0.3s ease 0.3s;
+    top: 20px;
+  }
+
+  nav {
+    position: absolute;
+    background-color: $col-white;
+    width: max(90%, 300px);
+    padding: rem(20) 0;
+    top: -500px;
+    transition: top 0.3s ease;
+    border-radius: 5px;
+  }
+
+  &__navlist {
+    li {
+      text-align: center;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      padding: rem(10) 0;
+      color: $col-blue-dark;
+      font-weight: 400;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        transform: scaleY(0);
+        transition: transform 0.3s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.3s;
+        background: $gradient;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: $col-white;
+        transition: color 0s 0.5s;
+      }
+
+      &:hover::after {
+        transform: scaleY(1);
+        width: 100%;
+      }
+    }
+  }
+}

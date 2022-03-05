@@ -1,0 +1,19 @@
+@use "utils" as *;
+
+.articles {
+  &__wrapper {
+    @include wrapper;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: rem(32);
+  }
+
+  &__heading {
+    text-align: center;
+
+    @include bp("large") {
+      text-align: start;
+      width: 700px;
+    }
+  }
+}

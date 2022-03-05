@@ -1,0 +1,26 @@
+@use "utils" as *;
+
+.features {
+  background-color: $col-blue-grayish-light;
+
+  &__wrapper {
+    @include wrapper;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include bp("large") {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: rem(18);
+    }
+  }
+
+  &__heading,
+  &__subheading {
+    text-align: center;
+
+    @include bp("large") {
+      text-align: start;
+      width: 700px;
+    }
+  }
+}

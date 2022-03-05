@@ -1,0 +1,49 @@
+@use "utils" as *;
+.hero {
+  position: relative;
+
+  &__wrapper {
+    @include bp("large") {
+      @include flex($justify-content: flex-start);
+      @include wrapper;
+      min-height: rem(630);
+    }
+  }
+
+  &__image {
+    min-height: rem(280);
+    background-image: url(../images/image-mockups.png),
+      url(../images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom, center;
+    background-size: 325px, cover;
+
+    @include bp("large") {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 65%;
+      overflow: visible;
+      min-height: rem(755);
+      background-image: url(../images/image-mockups.png),
+        url(../images/bg-intro-desktop.svg);
+      background-position: top -115px right -140px, top -200px right -300px;
+      background-size: 740px, 1100px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding: rem(40) rem(30) rem(64);
+
+    @include bp("large") {
+      text-align: start;
+      width: 35%;
+      padding: 0;
+    }
+
+    h1 {
+      font-weight: 400;
+    }
+  }
+}

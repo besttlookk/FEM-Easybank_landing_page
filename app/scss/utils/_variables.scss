@@ -1,0 +1,22 @@
+@use "functions" as *;
+
+// Colors
+$col-blue-dark: hsl(233, 26%, 24%);
+$col-blue-grayish: hsl(233, 8%, 62%);
+$col-blue-cyan: hsl(192, 70%, 51%);
+$col-blue-grayish-light: hsl(220, 16%, 96%);
+$col-green-lime: hsl(136, 65%, 51%);
+$col-gray-light: hsl(0, 0%, 98%);
+$col-white: hsl(0, 0%, 100%);
+
+// Gradiennt
+$gradient: linear-gradient(225deg, $col-green-lime, $col-blue-cyan);
+$gradient-overlay: linear-gradient(to bottom, $col-blue-dark, transparent);
+
+// font
+$font-public-sans: "Public Sans", sans-serif;
+
+// Gap
+$gap-large: rem(32);
+$gap-medium: rem(18);
+$gap: rem(20);

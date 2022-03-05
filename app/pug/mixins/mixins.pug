@@ -1,0 +1,14 @@
+mixin featureCard(cardData)
+  .featureCard 
+    img(alt="icon" src=`../images/icon-${cardData.iconName}.svg`)
+    h3 #{cardData.title}
+    p.featureCard__content #{cardData.content}
+
+mixin articleCard(cardData)
+  .articleCard 
+    .articleCard__image 
+      img(alt="article image" src=`../images/image-${cardData.image}.jpg`)
+    .articleCard__content
+      p.articleCard__author By #{cardData.author}
+      h3.articleCard__title #{cardData.title}
+      p.articleCard__detail #{cardData.content}

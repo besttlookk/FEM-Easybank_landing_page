@@ -1,0 +1,35 @@
+@use "functions" as *;
+@use "breakpoints" as *;
+
+@mixin flex(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $wrap: nowrap,
+  $gap: 0
+) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+@mixin hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--col-card-hover);
+  }
+}
+
+@mixin wrapper {
+  padding: rem(56) rem(30);
+  @include bp("large") {
+    max-width: rem(1600);
+    padding: rem(72) rem(25);
+    margin: 0 auto;
+  }
+}

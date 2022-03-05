@@ -1,0 +1,23 @@
+extends templates/layout 
+
+block main 
+  section.hero 
+    .hero__wrapper
+      .hero__image 
+      .hero__content 
+        h1  Next generation digital banking
+        p.u-mt-small Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.
+        a.cta.large.u-mt-large(href="#") Request Invite
+
+  section.features
+    .features__wrapper
+      h2.span-all.features__heading Why choose Easybank?
+      p.span-all.u-mt-small.features__subheading We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.
+      each feature in featuresArr 
+        +featureCard(feature)
+
+  section.articles 
+    .articles__wrapper 
+      h2.span-all.articles__heading Latest Articles
+      each article in articlesArr 
+          +articleCard(article)

@@ -1,0 +1,20 @@
+@use "utils" as *;
+
+.featureCard {
+  @include flex($direction: column);
+  gap: $gap;
+  margin-top: rem(32);
+
+  @include bp("large") {
+    align-items: flex-start;
+  }
+
+  &__content {
+    text-align: center;
+    word-wrap: break-word;
+
+    @include bp("large") {
+      text-align: start;
+    }
+  }
+}
